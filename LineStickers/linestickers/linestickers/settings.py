@@ -90,4 +90,4 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-FILES_STORE = "/root/Documents/Projects/automate-python/LineStickers/linestickers/linestickers/scrapped"
+FILES_STORE = "./scrapped"
