@@ -7,7 +7,8 @@ from PIL import Image
 
 def main():
     wd = os.getcwd()
-    upscale_sz = (512, 512)
+    # upscale_sz = 512, 512
+    base = 512
     upscale_dir = wd + '/scrapped/upscale'
 
     try:
@@ -26,7 +27,11 @@ def main():
             try:
                 orig_img = Image.open(list_img_dir + '/' + img)
                 print(orig_img)
+                width, height = orig_img.size
+                ratio = width / height
+                upscale_sz = base, round(base/ratio)
                 scaled_img = orig_img.resize(upscale_sz, resample=PIL.Image.NEAREST)
+                print(scaled_img) # TODO: test
                 scaled_img.save(upscale_dir + '/' + img)
                 img_count += 1
             except (IOError):
